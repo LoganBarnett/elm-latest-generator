@@ -15,7 +15,7 @@ yo elm-latest
 
 ## Status ##
 
-`gnerator-elm-latest` is very much in its infancy. Expect things to change. **HERE BE DRAGONS**
+`generator-elm-latest` is very much in its infancy. Expect things to change. **HERE BE DRAGONS**
 
 ## Wishlist ##
 * [ ] Use a better build pipeline such as webpack. [jolly.js](https://github.com/LoganBarnett/jolly.js) might be useful here. See also [elm-webpack-loader](https://github.com/rtfeldman/elm-webpack-loader).

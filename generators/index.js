@@ -19,6 +19,9 @@ module.exports = yeoman.Base.extend(
       var copyFiles =
         [ 'gulpfile.js'
         , 'package.json'
+        , 'webpack.config.js'
+        , 'karma.conf.js'
+        , 'browser-sync.js'
       ];
       var self = this;
       copyFiles.forEach(function(file) {
@@ -39,19 +42,31 @@ module.exports = yeoman.Base.extend(
         , default : this.appname // Default to current folder name
       }
     ], function (answers) {
-      this.log(answers.name);
+      // this.log(answers.name);
       done();
     }.bind(this));
   }
   , install: function() {
     var nodeDevDependencies =
       [ 'browser-sync'
-      , 'gulp'
-      , 'gulp-elm'
-      , 'gulp-newer'
+      // , 'gulp'
+      // , 'gulp-elm'
+      // , 'gulp-newer'
+      , 'webpack'
+      , 'extract-text-webpack-plugin'
+      , 'webpack-dev-middleware'
+      , 'webpack-hot-middleware'
+      // TODO: put these back in. using to iterate quickly
+      // , 'cssnext'
+      // , 'karma'
+      // , 'karma-webpack'
+      // , 'karma-coverage'
+      , 'rtfeldman/elm-webpack-loader'
     ];
     this.log('Installing Node modules');
     this.npmInstall(nodeDevDependencies, { saveDev: true });
+
+    // this.npmInstall('elm-webpack-loader', {saveDev: true });
 
     var elmPackages =
       [ 'elm-lang/core'
